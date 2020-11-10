@@ -5,21 +5,21 @@ services:
 
 
 before_install:
-    - docker build -t surya/react-test -f ./client/Dockerfile.dev ./client
+    - docker build -t slg419/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-    - docker run -e CI=true surya/react-test npm test
+    - docker run -e CI=true slg419/react-test npm test
 
 after_success:
-    - docker build -t surya/multi-client ./client
-    - docker build -t surya/multi-nginx ./nginx
-    - docker build -t surya/multi-server ./server
-    - docker build -t surya/multi-worker ./worker
+    - docker build -t slg419/multi-client ./client
+    - docker build -t slg419/multi-nginx ./nginx
+    - docker build -t slg419/multi-server ./server
+    - docker build -t slg419/multi-worker ./worker
     # login to the docker CLI
     - echo "$DOCKER_PASSWORD" | docker login -u  "$DOCKER_ID" --password-stdin
     # take those images and push them to docker hub
-    - docker push surya/multi-client
-    - docker push surya/multi-nginx
-    - docker push surya/multi-server
-    - docker push surya/multi-worker 
+    - docker push slg419/multi-client
+    - docker push slg419/multi-nginx
+    - docker push slg419/multi-server
+    - docker push slg419/multi-worker 
 

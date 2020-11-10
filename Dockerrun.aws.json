@@ -3,28 +3,28 @@
     "containerDefinitions": [
         {
             "name": "client",
-            "image": "surya/multi-client",
+            "image": "slg419/multi-client",
             "hostname": "client",
             "essential": false,
             "memory": 128
         },
         {
             "name": "server",
-            "image": "surya/multi-server",
+            "image": "slg419/multi-server",
             "hostname": "api",
             "essential": false,
             "memory": 128
         },
         {
             "name": "worker",
-            "image": "surya/multi-worker",
+            "image": "slg419/multi-worker",
             "hostname": "worker",
             "essential": false,
             "memory": 128
         },
         {
             "name": "nginx",
-            "image": "surya/multi-nginx",
+            "image": "slg419/multi-nginx",
             "hostname": "nginx",
             "essential": true,
             "portMappings": [
